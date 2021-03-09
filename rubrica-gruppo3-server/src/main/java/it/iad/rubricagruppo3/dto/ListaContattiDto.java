@@ -3,13 +3,13 @@ package it.iad.rubricagruppo3.dto;
 import it.iad.rubricagruppo3.model.Contatto;
 import java.util.List;
 
-public class RubricaDto {
+public class ListaContattiDto {
     List<Contatto> contatti;
 
-    public RubricaDto() {
+    public ListaContattiDto() {
     }
 
-    public RubricaDto(List<Contatto> contatti) {
+    public ListaContattiDto(List<Contatto> contatti) {
         this.contatti = contatti;
     }
 

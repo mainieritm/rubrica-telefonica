@@ -21,8 +21,7 @@ public class Contatto implements Serializable{
     public Contatto() {
     }
 
-    public Contatto(Long id, String nome, String cognome, String telefono) {
-        this.id = id;
+    public Contatto(String nome, String cognome, String telefono) {
         this.nome = nome;
         this.cognome = cognome;
         this.telefono = telefono;

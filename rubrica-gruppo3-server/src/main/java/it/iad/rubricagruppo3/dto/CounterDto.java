@@ -1,7 +1,7 @@
 package it.iad.rubricagruppo3.dto;
 
 public class CounterDto {
-    private int numeroContatti;
+    private long numeroContatti;
 
     public CounterDto() {
     }
@@ -10,7 +10,7 @@ public class CounterDto {
         this.numeroContatti = numeroContatti;
     }
 
-    public int getNumeroContatti() {
+    public long getNumeroContatti() {
         return numeroContatti;
     }
 
