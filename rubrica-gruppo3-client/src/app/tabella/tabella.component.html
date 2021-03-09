@@ -1,0 +1,9 @@
+<p>tabella works!</p>
+<table>
+    <tr *ngFor="let c of contatti">
+        <td>{{c.nome}}</td>
+        <td>{{c.cognome}}</td>
+        <td>{{c.telefono}}</td>
+        <button (click)= "rimuovi()">X</button>
+    </tr>
+</table>
