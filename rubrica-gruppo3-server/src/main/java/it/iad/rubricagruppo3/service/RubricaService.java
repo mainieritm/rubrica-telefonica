@@ -5,7 +5,7 @@ import java.util.List;
 
 
 public interface RubricaService {
-    int conta();
+    long conta();
     List<Contatto> search(String criterio);
     List<Contatto> cancellaRubrica(Long id);
     List<Contatto> aggiungiRubrica(Contatto contatto);
