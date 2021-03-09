@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Contatto } from '../contatto';
 
 @Component({
   selector: 'app-campo-add',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CampoAddComponent implements OnInit {
 
+  contatto: Contatto = new Contatto();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  aggiungi(){
+    
   }
 
 }

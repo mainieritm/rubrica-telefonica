@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-count-page',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CountPageComponent implements OnInit {
 
-  constructor() { }
+  contatore: number;
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  vaiAMain(){
+    this.router.navigateByUrl("/main");
   }
 
 }
