@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ContattoRepository extends JpaRepository <Contatto, Long>{
-    List<Contatto> findByNomeLike(String s);
+    List<Contatto> findByNomeContainsOrCognomeContains(String s, String p);
 }
 
     

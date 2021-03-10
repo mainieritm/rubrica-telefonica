@@ -26,7 +26,6 @@ export class LoginPageComponent implements OnInit {
     utente.username = this.nomeUtente;
     utente.password = this.password;
     dto.utente = utente;
-    let autenticato: boolean;
     let oss: Observable<UtenteDto> = this.http.post<UtenteDto>('http://localhost:8080/login', dto);
     oss.subscribe(d => {
       if (d.autenticato == true) {

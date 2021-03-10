@@ -12,33 +12,33 @@ import it.iad.rubricagruppo3.repoository.ContattoRepository;
 public class RubricaServiceImpl implements RubricaService {
 
     @Autowired
-    ContattoRepository rubricaRepository;
+    ContattoRepository contattoRepository;
 
     @Override
     public long conta() {
-        return rubricaRepository.count();
+        return contattoRepository.count();
     }
 
     @Override
     public List<Contatto> search(String criterio) {
-        return rubricaRepository.findByNomeLike(criterio);
+        return contattoRepository.findByNomeContainsOrCognomeContains(criterio, criterio);
     }
 
     @Override
     public List<Contatto> cancellaRubrica(Long id) {
-        rubricaRepository.deleteById(id);
+        contattoRepository.deleteById(id);
         return trovaTutti();
     }
 
     @Override
     public List<Contatto> aggiungiRubrica(Contatto contatto) {
-        rubricaRepository.save(contatto);
+        contattoRepository.save(contatto);
         return trovaTutti();
     }
 
     @Override
     public List<Contatto> trovaTutti() {
-        return rubricaRepository.findAll();
+        return contattoRepository.findAll();
     }
 
 }
