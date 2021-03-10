@@ -17,7 +17,7 @@ public class LoginServiceImpl implements LoginService{
         //Check login su database
         List<Utente> utenti;
         //Cerco sul database l'utente con userName e Password inseriti dal client
-        utenti = loginRepository.findByUserNameAndPassword(userName, password);
+        utenti = loginRepository.findByUsernameAndPassword(userName, password);
         // Se utenti ha almeno un elemento il login è true altrimenti false
         if (utenti.size() > 0){
             return true;
