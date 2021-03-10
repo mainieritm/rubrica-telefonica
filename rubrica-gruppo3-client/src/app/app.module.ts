@@ -12,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { TabellaComponent } from './tabella/tabella.component';
 import { RicercaComponent } from './ricerca/ricerca.component';
 import { CampoAddComponent } from './campo-add/campo-add.component';
+import { HttpClientModule} from '@angular/common/http'
+
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { CampoAddComponent } from './campo-add/campo-add.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
