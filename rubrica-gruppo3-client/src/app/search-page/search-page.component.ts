@@ -14,8 +14,6 @@ import { TabellaComponent } from '../tabella/tabella.component';
 })
 export class SearchPageComponent implements OnInit {
 
-  
-
   constructor(private router: Router) { }
 
   ngOnInit(): void {

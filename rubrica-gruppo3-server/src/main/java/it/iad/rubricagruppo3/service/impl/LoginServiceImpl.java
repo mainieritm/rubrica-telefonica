@@ -8,10 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class LoginServiceImpl implements LoginService{
+public class LoginServiceImpl implements LoginService {
+
     @Autowired
     LoginRepository loginRepository;
-    
+
     @Override
     public boolean checkLogin(String userName, String password) {
         //Check login su database
@@ -19,19 +20,18 @@ public class LoginServiceImpl implements LoginService{
         //Cerco sul database l'utente con userName e Password inseriti dal client
         utenti = loginRepository.findByUsernameAndPassword(userName, password);
         // Se utenti ha almeno un elemento il login è true altrimenti false
-        if (utenti.size() > 0){
+        if (utenti.size() > 0) {
             return true;
-        }else{
+        } else {
             return false;
         }
-        
+
         //Alternativa checkLogin
-        
 //        if (userName.equals("utente") && password.equals("password")){
 //            return true;
 //        }else{
 //            return false;
 //        }
     }
-    
+
 }

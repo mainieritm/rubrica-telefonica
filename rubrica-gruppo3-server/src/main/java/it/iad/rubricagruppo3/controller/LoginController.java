@@ -19,7 +19,6 @@ public class LoginController {
     @RequestMapping("/login")
     @ResponseBody
     public UtenteDto checkLogin(@RequestBody UtenteDto dto) {
-
         return new UtenteDto(dto.getUtente(),
                 loginService.checkLogin(dto.getUtente().getUsername(),
                         dto.getUtente().getPassword()));

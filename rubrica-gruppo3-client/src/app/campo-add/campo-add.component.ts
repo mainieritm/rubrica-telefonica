@@ -14,11 +14,8 @@ import { RubricaServiceService } from '../rubrica-service.service';
 export class CampoAddComponent implements OnInit {
 
   contatto: Contatto = new Contatto();
-  @Output() aggiornaContatti: EventEmitter<Contatto[]> = new EventEmitter<Contatto[]>();
 
-  constructor(private http: HttpClient, public rubrica: RubricaServiceService) { 
-    
-  }
+  constructor(private http: HttpClient, public rubrica: RubricaServiceService) {}
 
   ngOnInit(): void {
   }
@@ -29,7 +26,6 @@ export class CampoAddComponent implements OnInit {
     let oss: Observable<ListaContattiDto> = this.http.post<ListaContattiDto>('http://localhost:8080/aggiungi-rubrica', dto);
     oss.subscribe(d => this.rubrica.contatti=d.contatti);
     this.contatto = new Contatto();
-    this.aggiornaContatti.emit(this.rubrica.contatti);
   }
 
 }

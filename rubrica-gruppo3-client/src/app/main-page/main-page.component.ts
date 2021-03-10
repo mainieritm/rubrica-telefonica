@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Contatto } from '../contatto';
-import { RubricaServiceService } from '../rubrica-service.service';
 
 @Component({
   selector: 'app-main-page',
@@ -10,7 +8,7 @@ import { RubricaServiceService } from '../rubrica-service.service';
 })
 export class MainPageComponent implements OnInit {
 
-  constructor(private router: Router, public rubrica: RubricaServiceService) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -21,10 +19,6 @@ export class MainPageComponent implements OnInit {
 
   vaiARicerca(){
     this.router.navigateByUrl("/search");
-  }
-
-  aggiornaCont(contatti: Contatto[]){
-    this.rubrica.contatti = contatti;
   }
 
 }
