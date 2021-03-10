@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RubricaServiceService } from '../rubrica-service.service';
 
 @Component({
   selector: 'app-count-page',
@@ -10,7 +11,9 @@ export class CountPageComponent implements OnInit {
 
   contatore: number;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, public rubrica: RubricaServiceService) {
+    this.contatore = rubrica.contatti.length;
+   }
 
   ngOnInit(): void {
   }

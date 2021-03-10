@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Contatto } from '../contatto';
 import { CriterioRicercaDto } from '../criterio-ricerca-dto';
 import { ListaContattiDto } from '../lista-contatti-dto';
+import { RubricaServiceService } from '../rubrica-service.service';
 
 @Component({
   selector: 'app-ricerca',
@@ -13,9 +14,8 @@ import { ListaContattiDto } from '../lista-contatti-dto';
 export class RicercaComponent implements OnInit {
 
   criterio: string;
-  listaContatti: Contatto[];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, public rubrica: RubricaServiceService) { }
 
   ngOnInit(): void {
   }
@@ -24,7 +24,7 @@ export class RicercaComponent implements OnInit {
     let dto: CriterioRicercaDto = new CriterioRicercaDto();
     dto.stringa = this.criterio;
     let oss: Observable<ListaContattiDto> = this.http.post<ListaContattiDto>('http://localhost:8080/search', dto);
-    oss.subscribe(d => this.listaContatti=d.contatti);
+    oss.subscribe(d => this.rubrica.contatti=d.contatti);
   }
 
 }

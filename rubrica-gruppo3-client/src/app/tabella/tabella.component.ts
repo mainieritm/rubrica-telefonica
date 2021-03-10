@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Contatto } from '../contatto';
 import { ContattoDto } from '../contatto-dto';
 import { ListaContattiDto } from '../lista-contatti-dto';
+import { RubricaServiceService } from '../rubrica-service.service';
 
 @Component({
   selector: 'app-tabella',
@@ -13,23 +14,25 @@ import { ListaContattiDto } from '../lista-contatti-dto';
 export class TabellaComponent implements OnInit {
 
   contatto: Contatto = new Contatto();
-  contatti: Contatto [] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, public rubrica: RubricaServiceService) {
+    this.displayList();
+   }
 
   ngOnInit(): void {
   }
 
-  remove(i: number){
+  rimuovi(i: number){
     let dto: ContattoDto = new ContattoDto();
-    dto.contatto.id = i;
+    this.contatto.id = i;
+    dto.contatto = this.contatto;
     let oss: Observable<ListaContattiDto> = this.http.post<ListaContattiDto>('http://localhost:8080/cancella-rubrica', dto);
-    oss.subscribe(d => this.contatti=d.contatti);
+    oss.subscribe(d => this.rubrica.contatti=d.contatti);
   }
 
   displayList(){
     let oss: Observable<ListaContattiDto> = this.http.get<ListaContattiDto>('http://localhost:8080/main-page');
-    oss.subscribe(d => this.contatti = d.contatti);
+    oss.subscribe(d => this.rubrica.contatti = d.contatti);
   }
 
 }

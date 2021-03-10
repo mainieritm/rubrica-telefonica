@@ -1,5 +1,9 @@
-<h1>Main</h1>
-<app-campo-add></app-campo-add>
+<h1>Bevenuto nella Tua Rubrica</h1>
+<app-campo-add (aggiornaContatti) = "aggiornaCont($event)"></app-campo-add>
+&nbsp;
 <button (click)= "vaiAConta()">Conta</button>
+&nbsp;
 <button (click)= "vaiARicerca()">Ricerca</button>
-<app-tabella></app-tabella>
+<br>
+<br>
+<app-tabella #contatti></app-tabella>

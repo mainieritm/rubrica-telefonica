@@ -4,10 +4,10 @@
         <th>Cognome</th>
         <th>Telefono</th>
     </tr>
-    <tr *ngFor="let c of contatti">
+    <tr *ngFor="let c of rubrica.contatti">
         <td>{{c.nome}}</td>
         <td>{{c.cognome}}</td>
         <td>{{c.telefono}}</td>
-        <button (click)= "rimuovi()">X</button>
+        <button (click)= "rimuovi(c.id)">X</button>
     </tr>
 </table>
