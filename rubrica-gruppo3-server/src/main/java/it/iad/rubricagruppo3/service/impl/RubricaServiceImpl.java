@@ -1,16 +1,16 @@
 package it.iad.rubricagruppo3.service.impl;
 
 import it.iad.rubricagruppo3.model.Contatto;
+import it.iad.rubricagruppo3.repoository.RubricaRepository;
 import it.iad.rubricagruppo3.service.RubricaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import it.iad.rubricagruppo3.repoository.ContattoRepository;
 
 @Service
 public class RubricaServiceImpl implements RubricaService{
     @Autowired
-    ContattoRepository rubricaRepository;
+    RubricaRepository rubricaRepository;
     
     @Override
     public long conta() {

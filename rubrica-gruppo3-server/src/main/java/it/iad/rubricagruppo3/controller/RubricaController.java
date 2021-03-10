@@ -3,6 +3,8 @@ package it.iad.rubricagruppo3.controller;
 import it.iad.rubricagruppo3.dto.ContattoDto;
 import it.iad.rubricagruppo3.dto.CriterioRicercaDto;
 import it.iad.rubricagruppo3.dto.ListaContattiDto;
+import it.iad.rubricagruppo3.dto.UtenteDto;
+import it.iad.rubricagruppo3.service.LoginService;
 import it.iad.rubricagruppo3.service.RubricaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -24,7 +26,7 @@ public class RubricaController {
     @RequestMapping("/conta")
     @ResponseBody
     public long conta() {
-        return rubricaService.conta(); //da correggere
+        return rubricaService.conta();
     }
 
     @RequestMapping("/search")
@@ -51,5 +53,12 @@ public class RubricaController {
         return new ListaContattiDto(rubricaService.trovaTutti());
     }
     
-
+//    @RequestMapping("/login")
+//    @ResponseBody
+//    public UtenteDto checkLogin(@RequestBody UtenteDto dto){
+//        
+//        return new UtenteDto(dto.getUtente(),
+//                loginService.checkLogin(dto.getUtente().getUsername(), 
+//                                        dto.getUtente().getPassword()));
+//    }
 }
