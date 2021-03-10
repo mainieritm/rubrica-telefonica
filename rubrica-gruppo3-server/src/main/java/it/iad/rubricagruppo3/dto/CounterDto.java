@@ -6,7 +6,7 @@ public class CounterDto {
     public CounterDto() {
     }
 
-    public CounterDto(int numeroContatti) {
+    public CounterDto(long numeroContatti) {
         this.numeroContatti = numeroContatti;
     }
 
@@ -14,7 +14,7 @@ public class CounterDto {
         return numeroContatti;
     }
 
-    public void setNumeroContatti(int numeroContatti) {
+    public void setNumeroContatti(long numeroContatti) {
         this.numeroContatti = numeroContatti;
     }
 }

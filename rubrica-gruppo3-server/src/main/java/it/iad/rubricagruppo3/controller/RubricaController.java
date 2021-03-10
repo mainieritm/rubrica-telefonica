@@ -1,6 +1,7 @@
 package it.iad.rubricagruppo3.controller;
 
 import it.iad.rubricagruppo3.dto.ContattoDto;
+import it.iad.rubricagruppo3.dto.CounterDto;
 import it.iad.rubricagruppo3.dto.CriterioRicercaDto;
 import it.iad.rubricagruppo3.dto.ListaContattiDto;
 import it.iad.rubricagruppo3.service.RubricaService;
@@ -23,8 +24,8 @@ public class RubricaController {
 
     @RequestMapping("/conta")
     @ResponseBody
-    public long conta() {
-        return rubricaService.conta(); //da correggere
+    public CounterDto conta() {
+        return new CounterDto(rubricaService.conta()); 
     }
 
     @RequestMapping("/search")

@@ -1,5 +1,6 @@
 package it.iad.rubricagruppo3.service.impl;
 
+import it.iad.rubricagruppo3.dto.CounterDto;
 import it.iad.rubricagruppo3.model.Contatto;
 import it.iad.rubricagruppo3.service.RubricaService;
 import java.util.List;
@@ -8,10 +9,11 @@ import org.springframework.stereotype.Service;
 import it.iad.rubricagruppo3.repoository.ContattoRepository;
 
 @Service
-public class RubricaServiceImpl implements RubricaService{
+public class RubricaServiceImpl implements RubricaService {
+
     @Autowired
     ContattoRepository rubricaRepository;
-    
+
     @Override
     public long conta() {
         return rubricaRepository.count();
@@ -38,5 +40,5 @@ public class RubricaServiceImpl implements RubricaService{
     public List<Contatto> trovaTutti() {
         return rubricaRepository.findAll();
     }
-    
+
 }
